@@ -336,12 +336,13 @@ body {
 
 	.section-heading {
 		color: $pure-white;
+		// color: white;
 	}
 
 	&__option {
+		background-color: $pure-white;
 		margin: 1em 0;
 		box-shadow: 5px 5px 10px #2e2e2e2e;
-		background-color: $pure-white;
 		overflow: hidden;
 
 		&-img {
@@ -352,20 +353,22 @@ body {
 				transform: scale(1.1);
 			}
 		}
-		&-info{
+		&-info {
 			padding: 2em;
 		}
-		&-heading{
+		&-heading {
 			margin-bottom: 0.5em;
 			font-size: 2.4rem;
 			font-weight: 300;
+			color: $pure-white;
 		}
-		&-text{
+		&-text {
 			margin-bottom: 0.5em;
 			font-size: 1.3rem;
-			color: $dark;
+			// color: $dark;
+			color: $pure-white;
 		}
-		&-btn{
+		&-btn {
 			margin-top: 1em;
 			padding: 0.8em;
 			width: 100%;
@@ -374,10 +377,36 @@ body {
 			border: none;
 			border-radius: 8px;
 			cursor: pointer;
-			
-			&::before{
+
+			&::before {
 				background-color: $secondary-color;
 			}
+		}
+	}
+}
+
+//REVIEWS
+
+.reviews{
+	&__box{
+		position: relative;
+		margin: 2em;
+		padding: 2em;
+		border-radius: 8px;
+		box-shadow: 3px 3px 10px #2e2e2e2e;
+	}
+
+	&__box-img{
+		position: absolute;
+		top: 8%;
+		left: 75%;
+		transform: translate(-50%,-50%);
+		img{
+			width: 80px;
+			height: 80px;
+			object-fit: cover;
+			border-radius: 8px;
+			// z-index: 100;
 		}
 	}
 }
@@ -409,6 +438,23 @@ body {
 		&__img {
 			margin-bottom: 0;
 			max-height: 300px;
+		}
+	}
+
+	.offers {
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			width: 100%;
+		}
+		&-info {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		&-heading {
+			margin-bottom: 0.5em;
+			font-size: 3.6rem;
 		}
 	}
 }
@@ -512,6 +558,20 @@ body {
 	hr {
 		width: 60%;
 		max-width: 900px;
+	}
+
+	.offers {
+		background-image: $blue-gradient, url('../img/img_4_duze.jpg');
+
+		&__option {
+			&-img {
+				object-fit: cover;
+				height: 300px;
+			}
+			&-text {
+				font-size: 1.5rem;
+			}
+		}
 	}
 }
 
