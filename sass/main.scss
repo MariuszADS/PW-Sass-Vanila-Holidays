@@ -20,8 +20,6 @@ body {
 	font-size: 1.6rem;
 }
 
-
-
 //NAV
 
 .burger-btn {
@@ -33,7 +31,7 @@ body {
 	border: 1px solid transparent;
 	cursor: pointer;
 	z-index: 1000;
-	
+
 	&:focus {
 		outline: none;
 		border: 1px solid rgba(255, 255, 255, 0.5);
@@ -46,27 +44,27 @@ body {
 			width: 100%;
 		}
 	}
-	
+
 	&__box {
 		position: relative;
 		width: 40px;
 		height: 30px;
 	}
-	
+
 	&__bars,
 	&__bars::after,
 	&__bars::before {
 		@include burgerBtn;
 	}
-	
+
 	&__bars {
 		width: 100%;
-		
+
 		&::after {
 			top: 13px;
 			width: 60%;
 		}
-		
+
 		&::before {
 			top: 27px;
 			width: 30%;
@@ -89,11 +87,11 @@ body {
 	transform: translateX(100%);
 	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 	z-index: 100;
-	
+
 	&--active {
 		transform: translateX(0);
 	}
-	
+
 	&__item {
 		position: relative;
 		display: block;
@@ -102,7 +100,7 @@ body {
 		font-size: 2.8rem;
 		color: $pure-white;
 		text-decoration: none;
-		
+
 		&::before {
 			position: absolute;
 			top: 0;
@@ -151,17 +149,17 @@ body {
 	color: $pure-white;
 	@include heroImages('../img/palm-3172367_640.jpg');
 	background-attachment: scroll;
-	
+
 	&__heading {
 		font-family: 'Dancing Script', cursive;
 		font-size: 4.8rem;
 		font-weight: 300;
 	}
-	
+
 	&_text {
 		font-size: 1.4rem;
 	}
-	
+
 	&__btn {
 		margin-top: 2em;
 		padding: 0.8em 1.6em;
@@ -173,7 +171,7 @@ body {
 		text-decoration: none;
 		text-transform: uppercase;
 		cursor: pointer;
-		
+
 		&::before {
 			background-color: $light-white;
 		}
@@ -189,16 +187,16 @@ body {
 		flex-direction: column;
 		margin: 2em 0;
 	}
-	
+
 	&__img {
 		width: 100%;
 		margin-bottom: 1em;
 	}
-	
+
 	&__title {
 		margin-bottom: 0.5em;
 	}
-	
+
 	&__text {
 		font-size: 1.4rem;
 	}
@@ -213,13 +211,13 @@ body {
 	text-align: center;
 	color: $pure-white;
 	overflow: hidden;
-	
+
 	&__title {
 		font-family: 'Dancing Script', cursive;
 		margin-bottom: 0.5em;
 		font-size: 4.8rem;
 	}
-	
+
 	&__text {
 		padding: 1em 0;
 	}
@@ -235,7 +233,7 @@ body {
 		color: $pure-white;
 		text-align: center;
 		perspective: 1000px;
-		
+
 		&:hover {
 			.islands__card-img {
 				transform: rotateY(-180deg);
@@ -348,19 +346,23 @@ body {
 
 	&__option {
 		background-color: $pure-white;
-		margin: 2em 0;
+		margin: 1em 0;
 		box-shadow: 5px 5px 10px #2e2e2e2e;
 		overflow: hidden;
 		z-index: 100;
 
+		&-heading {
+			margin: 1em;
+		}
+
 		&-img {
 			width: 100%;
 
-			// transition: transform 0.3s;
+			transition: transform 0.3s;
 
-			// &:hover {
-			// 	transform: scale(1.1);
-			// }
+			&:hover {
+				transform: scale(0.95);
+			}
 		}
 		&-info {
 			padding: 2em;
@@ -372,15 +374,18 @@ body {
 			// color: $pure-white;
 		}
 		&-text {
-			margin-bottom: 0.5em;
+		// margin-bottom: 0.5em;
+			margin: 1.2em;
 			font-size: 1.3rem;
 			color: $dark;
 			// color: $pure-white;
 		}
 		&-btn {
 			margin-top: 1em;
+			margin-left: 1.3em;
+			margin-bottom: 2em;
 			padding: 0.8em;
-			width: 100%;
+			width: 90%;
 			color: $pure-white;
 			background-color: $main-color;
 			border: none;
@@ -566,7 +571,7 @@ body {
 			}
 		}
 		&__img {
-			margin-bottom: 0;
+			margin-bottom: 1em;
 			max-height: 300px;
 		}
 	}
@@ -577,20 +582,30 @@ body {
 			margin: 2em 0;
 			width: 100%;
 
+			&-img {
+				width: 50%;
+				height: auto;
+			}
+
+			&-heading {
+				margin-bottom: 0.5em;
+				font-size: 3.6rem;
+			}
 			&-text {
 				margin: 1em;
+				font-size: 20px;
 			}
-		}
 
-		&-info {
-			margin: 1em;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
-		&-heading {
-			margin-bottom: 0.5em;
-			font-size: 3.6rem;
+			&-btn {
+				margin-bottom: 1.5em;
+				padding: 1em;
+			}
+			&-info {
+				margin: 1em;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
 		}
 	}
 }
@@ -745,12 +760,20 @@ body {
 		background-image: $blue-gradient, url('../img/img_4_duze.jpg');
 
 		&__option {
+			&-heading {
+				margin: 1em;
+			}
 			&-img {
 				object-fit: cover;
 				height: 300px;
 			}
 			&-text {
 				font-size: 1.5rem;
+				margin: 1em;
+			}
+			&-btn {
+				margin: 1em;
+				width: 90%;
 			}
 		}
 	}
