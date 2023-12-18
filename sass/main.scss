@@ -20,6 +20,8 @@ body {
 	font-size: 1.6rem;
 }
 
+
+
 //NAV
 
 .burger-btn {
@@ -31,7 +33,7 @@ body {
 	border: 1px solid transparent;
 	cursor: pointer;
 	z-index: 1000;
-
+	
 	&:focus {
 		outline: none;
 		border: 1px solid rgba(255, 255, 255, 0.5);
@@ -44,27 +46,27 @@ body {
 			width: 100%;
 		}
 	}
-
+	
 	&__box {
 		position: relative;
 		width: 40px;
 		height: 30px;
 	}
-
+	
 	&__bars,
 	&__bars::after,
 	&__bars::before {
 		@include burgerBtn;
 	}
-
+	
 	&__bars {
 		width: 100%;
-
+		
 		&::after {
 			top: 13px;
 			width: 60%;
 		}
-
+		
 		&::before {
 			top: 27px;
 			width: 30%;
@@ -87,11 +89,11 @@ body {
 	transform: translateX(100%);
 	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 	z-index: 100;
-
+	
 	&--active {
 		transform: translateX(0);
 	}
-
+	
 	&__item {
 		position: relative;
 		display: block;
@@ -100,7 +102,7 @@ body {
 		font-size: 2.8rem;
 		color: $pure-white;
 		text-decoration: none;
-
+		
 		&::before {
 			position: absolute;
 			top: 0;
@@ -131,6 +133,11 @@ body {
 	animation: navItemsAnimations 1s both;
 	// animation-delay: .3s;
 }
+.black-bars-colors,
+.black-bars-colors::after,
+.black-bars-colors::before {
+	background-color: $dark;
+}
 
 .header {
 	position: relative;
@@ -144,17 +151,17 @@ body {
 	color: $pure-white;
 	@include heroImages('../img/palm-3172367_640.jpg');
 	background-attachment: scroll;
-
+	
 	&__heading {
 		font-family: 'Dancing Script', cursive;
 		font-size: 4.8rem;
 		font-weight: 300;
 	}
-
+	
 	&_text {
 		font-size: 1.4rem;
 	}
-
+	
 	&__btn {
 		margin-top: 2em;
 		padding: 0.8em 1.6em;
@@ -166,7 +173,7 @@ body {
 		text-decoration: none;
 		text-transform: uppercase;
 		cursor: pointer;
-
+		
 		&::before {
 			background-color: $light-white;
 		}
@@ -182,16 +189,16 @@ body {
 		flex-direction: column;
 		margin: 2em 0;
 	}
-
+	
 	&__img {
 		width: 100%;
 		margin-bottom: 1em;
 	}
-
+	
 	&__title {
 		margin-bottom: 0.5em;
 	}
-
+	
 	&__text {
 		font-size: 1.4rem;
 	}
@@ -206,13 +213,13 @@ body {
 	text-align: center;
 	color: $pure-white;
 	overflow: hidden;
-
+	
 	&__title {
 		font-family: 'Dancing Script', cursive;
 		margin-bottom: 0.5em;
 		font-size: 4.8rem;
 	}
-
+	
 	&__text {
 		padding: 1em 0;
 	}
@@ -228,7 +235,7 @@ body {
 		color: $pure-white;
 		text-align: center;
 		perspective: 1000px;
-
+		
 		&:hover {
 			.islands__card-img {
 				transform: rotateY(-180deg);
@@ -331,7 +338,7 @@ body {
 
 .offers {
 	position: relative;
-	@include heroImages('../img/img_4_duze.jpg');
+	@include heroImages('../img/img_1_male.jpg');
 	overflow: hidden;
 
 	.section-heading {
@@ -341,17 +348,19 @@ body {
 
 	&__option {
 		background-color: $pure-white;
-		margin: 1em 0;
+		margin: 2em 0;
 		box-shadow: 5px 5px 10px #2e2e2e2e;
 		overflow: hidden;
+		z-index: 100;
 
 		&-img {
 			width: 100%;
-			transition: transform 0.3s;
 
-			&:hover {
-				transform: scale(1.1);
-			}
+			// transition: transform 0.3s;
+
+			// &:hover {
+			// 	transform: scale(1.1);
+			// }
 		}
 		&-info {
 			padding: 2em;
@@ -360,13 +369,13 @@ body {
 			margin-bottom: 0.5em;
 			font-size: 2.4rem;
 			font-weight: 300;
-			color: $pure-white;
+			// color: $pure-white;
 		}
 		&-text {
 			margin-bottom: 0.5em;
 			font-size: 1.3rem;
-			// color: $dark;
-			color: $pure-white;
+			color: $dark;
+			// color: $pure-white;
 		}
 		&-btn {
 			margin-top: 1em;
@@ -387,27 +396,148 @@ body {
 
 //REVIEWS
 
-.reviews{
-	&__box{
+@media (max-width: 767px) {
+	.reviews.section-padding {
+		padding: 6em 0;
+	}
+}
+
+.reviews {
+	&__box {
 		position: relative;
 		margin: 2em;
 		padding: 2em;
 		border-radius: 8px;
 		box-shadow: 3px 3px 10px #2e2e2e2e;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(0.95);
+		}
 	}
 
-	&__box-img{
+	&__box-img {
 		position: absolute;
 		top: 8%;
 		left: 75%;
-		transform: translate(-50%,-50%);
-		img{
+		transform: translate(-50%, -50%);
+		img {
 			width: 80px;
 			height: 80px;
 			object-fit: cover;
-			border-radius: 8px;
+			border-radius: 50%;
 			// z-index: 100;
 		}
+	}
+	&__box-quote {
+		margin-bottom: 1em;
+		font-size: 3rem;
+		color: $main-color;
+	}
+	&__box-text {
+		margin-bottom: 1em;
+		font-size: 1.4rem;
+		color: $dark;
+	}
+}
+
+//CONTACT
+
+.contact {
+	position: relative;
+	background-color: $light-white;
+	overflow: hidden;
+
+	// .white-block-left{
+	// 	background-color: $dark;
+	// }
+
+	&__form,
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-label {
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+	}
+
+	&__form-input {
+		@include contactForm;
+	}
+	&__form-textarea {
+		@include contactForm;
+
+		max-width: 100%;
+		min-width: 100%;
+		width: 100%;
+		min-height: 100%;
+	}
+
+	&__form-btn {
+		align-self: flex-end;
+		padding: 1em;
+		width: 100%;
+		max-width: 300px;
+		color: $pure-white;
+		border: none;
+		border-radius: 8px;
+		background-color: $main-color;
+		cursor: pointer;
+
+		&::before {
+			background-color: $secondary-color;
+		}
+	}
+}
+
+//FOOTER
+
+.footer {
+	color: $pure-white;
+	background-color: $dark;
+	.wrapper {
+		padding: 6em 2em 2em;
+	}
+	&__box {
+		font-size: 1.4rem;
+	}
+	&__box-desktop {
+		display: none;
+	}
+	&__box-title {
+		margin: bottom 1em;
+	}
+
+	&__box-title {
+		margin-bottom: 1em;
+		font-size: 3rem;
+		text-transform: uppercase;
+	}
+	&__box-social {
+		margin: 2em 0 1em;
+	}
+
+	&__box-link {
+		padding: 0 0.3em;
+		font-size: 3.6rem;
+		color: $pure-white;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:hover {
+			color: $light-white;
+		}
+	}
+
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
 	}
 }
 
@@ -446,8 +576,14 @@ body {
 			display: flex;
 			margin: 2em 0;
 			width: 100%;
+
+			&-text {
+				margin: 1em;
+			}
 		}
+
 		&-info {
+			margin: 1em;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
@@ -504,6 +640,51 @@ body {
 		&__card {
 			margin: 1em;
 			width: 45%;
+		}
+	}
+
+	.offers {
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			width: 100%;
+			&-info {
+				margin: 2em;
+			}
+		}
+	}
+
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__box-desktop {
+			display: block;
+		}
+
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+
+			&:first-child {
+				width: 50%;
+			}
+		}
+		&__box-title {
+			list-style: none;
+		}
+		&__box-list {
+			list-style: none;
+		}
+		&__box-list-item {
+			list-style: none;
+
+			a {
+				color: $light-white;
+				text-decoration: none;
+			}
 		}
 	}
 }
@@ -579,6 +760,39 @@ body {
 	.islands {
 		&__card {
 			width: 30%;
+		}
+	}
+
+	.offers {
+		&__box {
+			width: 70%;
+			position: relative;
+			left: 15%;
+		}
+		background-image: $blue-gradient, url('../img/img_4_duze.jpg');
+
+		.section-heading {
+			font-size: 46px;
+		}
+
+		&__option {
+			&-heading {
+				margin: 1em;
+				font-size: 30px;
+				font-weight: 600;
+			}
+			&-img {
+				object-fit: cover;
+				height: 600px;
+			}
+			&-text {
+				margin: 2em;
+				font-size: 1.5rem;
+			}
+			&-btn {
+				margin: 1em;
+				width: 95%;
+			}
 		}
 	}
 }
